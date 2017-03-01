@@ -1,0 +1,34 @@
+{
+	"inverseConicEnabled": true,
+	"enableRayMistrust": false,
+	"maxSteinerVerticesPerTriangle": 4,
+	
+	"w_1": 10.0,
+	"w_2": 2.0,
+	"w_3": 1.0,
+	"w_m": 1.0,
+	"freeVoteThreshold": 20.0,
+	"rayRemovalThreshold": 100.0,
+	"vertexRemovalThreshold": 100.0,
+	"primary_points_visibility_threshold": 2,
+	"outlierFilteringThreshold": 0.25,
+	"maxPointsPerCamera": 1000000,
+	"minDistancePointPositionUpdate": 0.0,
+	
+	"maxDistanceCamFeature": 40.0,
+	"steinerGridStepLength": 20.0,
+	
+	"manifold_update_every": 4,
+	"initial_manifold_update_skip": 2,
+	"save_manifold_every": 10,
+	
+	"time_stats_output": true,
+	"all_sort_of_output": false,
+	"fake_points_multiplier": 0,
+	"update_points_position": false,
+	
+	"output_folder": "res/output/",
+	"time_stats_folder": "res/stats/",
+	"count_stats_folder": "res/stats/",
+	"statsId": "default"
+}

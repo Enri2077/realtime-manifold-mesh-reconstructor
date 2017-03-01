@@ -1,0 +1,7 @@
+*~
+/Debug/
+/Release/
+/.cproject
+/.project
+/.settings/
+/res/output

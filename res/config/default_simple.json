@@ -1,0 +1,19 @@
+{
+	"maxDistanceCamFeature": 40.0,
+	
+	"freeVoteThreshold": 20.0,
+	"w_1": 10.0,
+	"w_2": 2.0,
+	"w_3": 1.0,
+	
+	"maxPointsPerCamera": 1000000,
+	
+	"steinerGridStepLength": 20.0,
+	
+	"manifold_update_every": 4,
+	
+	"update_points_position": false,
+	
+	"output_folder": "res/output/"
+	
+}
