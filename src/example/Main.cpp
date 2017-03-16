@@ -403,7 +403,7 @@ int main(int argc, char **argv) {
 		if (!updatingCamera && m.iterationCount && !(m.iterationCount % confManif.saveMeshEvery)){
 			std::stringstream ssm, ssnm;
 			ssm << "current_" << m.iterationCount << "_" << confManif.statsId;
-			ssnm << ssm <<  "_NOT_MANIFOLD";
+			ssnm << ssm.str() <<  "_NOT_MANIFOLD";
 
 			if(!confManif.checkIntegrityWhenFinished || m.integrityCheck()) m.saveMesh(confManif.outputFolder, ssm.str());
 			else m.saveMesh(confManif.outputFolder, ssnm.str());
