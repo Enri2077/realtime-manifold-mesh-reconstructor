@@ -1,3 +1,22 @@
+This code implements the Incremental Reconstruction algorithm described in the paper 
+Piazza, Enrico, Andrea Romanoni, and Matteo Matteucci. "Real-Time CPU-Based Large-Scale Three-Dimensional Mesh Reconstruction." IEEE Robotics and Automation Letters 3.3 (2018): 1584-1591.
+
+Bibtex:
+
+```
+@article{piazza2018real,
+  title={Real-Time CPU-Based Large-Scale Three-Dimensional Mesh Reconstruction},
+  author={Piazza, Enrico and Romanoni, Andrea and Matteucci, Matteo},
+  journal={IEEE Robotics and Automation Letters},
+  volume={3},
+  number={3},
+  pages={1584--1591},
+  year={2018},
+  publisher={IEEE}
+}
+```
+
+
 # DEPENDENCIES #
 ### OpenCV  (> 2.4.x) ###
 sudo apt-get install libopencv-dev 
