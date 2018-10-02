@@ -40,14 +40,21 @@ file(GLOB_RECURSE MAIN_SOURCE src/example/OpenMvgParser.cpp
 
 add_executable(sfmReconstructor src/example/Main_sfm.cpp ${MAIN_SOURCE} ${LIB_SOURCE})
 target_link_libraries(sfmReconstructor ${OpenCV_LIBS}
-                                            ${GMPXX_LIBRARIES}
-                                            ${GMP_LIBRARIES}
-                                            ${LAPACK_LIBRARIES}
-                                            ${CGAL_LIBRARY}
-                                            ${Boost_LIBRARIES}
-                                            ${ASSIMP_LIBRARIES}  )
+                                        ${GMPXX_LIBRARIES}
+                                        ${GMP_LIBRARIES}
+                                        ${LAPACK_LIBRARIES}
+                                        ${CGAL_LIBRARY}
+                                        ${Boost_LIBRARIES}
+                                        ${ASSIMP_LIBRARIES}  )
 
-
+add_executable(slamReconstructor src/example/Main_slam.cpp ${MAIN_SOURCE} ${LIB_SOURCE})
+target_link_libraries(slamReconstructor ${OpenCV_LIBS}
+                                        ${GMPXX_LIBRARIES}
+                                        ${GMP_LIBRARIES}
+                                        ${LAPACK_LIBRARIES}
+                                        ${CGAL_LIBRARY}
+                                        ${Boost_LIBRARIES}
+                                        ${ASSIMP_LIBRARIES}  )
 
 # ------------------------ INSTALLATION ------------------------
 
