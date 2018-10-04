@@ -18,38 +18,49 @@ Bibtex:
 
 
 # DEPENDENCIES #
-### OpenCV  (> 2.4.x) ###
-sudo apt-get install libopencv-dev 
+* opencv
+* eigen3
+* gmp
+* mpfr
+* CGAL
+* boost
 
-### Eigen3 (> 3.0.5) ###
-sudo apt-get install libeigen3-dev
+If you are on Ubuntu, you can install all the dependencies (execept CGAL) with: 
+``` 
+sudo apt install libopencv-dev libeigen3-dev libgmp-dev \
+libmpfr-dev libmpfr4 libboost-all-dev
+```
+since CGAL is not up to date on ubuntu distro we advise to install it from the [sources](https://github.com/CGAL/cgal "CGAL").
 
-### gmp ###
-sudo apt-get install libgmp-dev
-
-### mpfr ###
-sudo apt-get install libmpfr-dev
-
-### CGAL (>4.3) ###
-From the CGAL installation manual at http://doc.cgal.org/latest/Manual/installation.html :
-* clone the CGAL git repository in a folder (FOLDER) or download the source code from the official page https://github.com/CGAL/cgal/releases
+# Generate runnable files
+You can compile the sources using the simple cmake-make procedure.
+First thing first, create the build directory:
 ```
-cd FOLDER
-git clone https://github.com/CGAL/cgal.git CGAL-{CGAL_VERSION}
+mkdir build
 ```
-* configure CGAL
+Then enter the directory and generate the make file and the executables:
 ```
-cd CGAL-{CGAL_VERSION}/
-cmake .
-```
-* build the CGAL libraries
-```
-make
-```
-* install the libraries
-```
-sudo make install
+cd build
+cmake -DCMAKE_BUILD_TYPE=Release ..
+make -j4
 ```
 
-At the time of writing {CGAL_VERSION} is 4.9
 
+Let notice, in the external directory the sources of `glm` and `rapidjson` are provided, therefore they do not need to be installed. However, if you already have those installed on your machine you may want to use your version. To do so:
+
+1. open the `CMakeLists.txt` file
+2. comment out lines `20` and `21`
+3. add `find_library(GMP_LIBRARY gmp /usr/lib)` between line `9` and `10`.
+
+# Run
+Once the executable files have been generated you would find `sfmReconstructor` and `slamReconstructor` files into the `build` folder. To run one of them, e.g., `sfmReconstructor`, do the following:
+
+1. go to the project main directory
+2. create the output folder (you need to do this only once)
+```
+mkdir output
+```
+3. launch your file specifing the input data
+```
+sfmReconstructor data/sfm_data.json
+```
